@@ -1,0 +1,90 @@
+:root {
+  --bg: #0f1225;
+  --panel: #ffffff;
+  --ink: #1c2135;
+  --muted: #6b7280;
+  --accent: #6d5cff;
+  --accent-dark: #5546e0;
+  --danger: #dc2626;
+  --border: #e5e7eb;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: linear-gradient(160deg, #eceaff 0%, #f6f7fb 40%, #fdf1ec 100%);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+a { color: var(--accent-dark); }
+
+.navbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.9rem 1.5rem; background: var(--bg); color: #fff;
+}
+.navbar .brand { color: #fff; font-size: 1.3rem; font-weight: 700; text-decoration: none; }
+.navbar .brand span { color: #a79bff; }
+.navbar nav { display: flex; gap: 1rem; align-items: center; }
+.navbar nav a { color: #d7d9ee; text-decoration: none; }
+.nav-user { color: #b9bdd6; font-size: 0.9rem; }
+
+.btn {
+  border: 1px solid transparent; border-radius: 8px; cursor: pointer;
+  padding: 0.55rem 1rem; font-size: 0.95rem; background: #eef0ff; color: var(--ink);
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-dark); }
+.btn-ghost { background: transparent; border-color: var(--border); }
+.navbar .btn-ghost { border-color: #3a3f63; color: #d7d9ee; }
+.btn-danger { background: #fef2f2; color: var(--danger); border-color: #fecaca; }
+.btn-small { padding: 0.3rem 0.6rem; font-size: 0.82rem; }
+.btn-block { width: 100%; }
+.btn:disabled { opacity: 0.6; cursor: wait; }
+
+.dashboard { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
+.dashboard-head { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: end; }
+.dashboard-head h2 { margin: 0 0 0.25rem; font-size: 1.7rem; }
+.dashboard-tools { display: flex; gap: 0.6rem; align-items: center; }
+.search { padding: 0.55rem 0.8rem; border: 1px solid var(--border); border-radius: 8px; min-width: 230px; }
+.muted { color: var(--muted); }
+.error { background: #fef2f2; color: var(--danger); border: 1px solid #fecaca; padding: 0.6rem 0.9rem; border-radius: 8px; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.8rem; margin: 1.2rem 0; }
+.stat-card {
+  background: var(--panel); border: 1px solid var(--border); border-top: 4px solid var(--accent);
+  border-radius: 10px; padding: 0.9rem; display: flex; flex-direction: column; gap: 0.2rem;
+}
+.stat-value { font-size: 1.6rem; font-weight: 700; }
+.stat-label { color: var(--muted); font-size: 0.82rem; }
+
+.board { display: grid; grid-template-columns: repeat(5, minmax(210px, 1fr)); gap: 0.9rem; overflow-x: auto; padding-bottom: 1rem; }
+.board-column { background: rgba(255,255,255,0.65); border: 1px solid var(--border); border-radius: 10px; padding: 0.7rem; min-height: 200px; }
+.board-column h4 { margin: 0 0 0.7rem; padding-bottom: 0.5rem; border-bottom: 3px solid var(--accent); font-size: 0.95rem; }
+.board-column .count { background: #eef0ff; border-radius: 999px; padding: 0.05rem 0.5rem; font-size: 0.78rem; }
+.board .empty { color: var(--muted); font-size: 0.85rem; }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 0.7rem; margin-bottom: 0.6rem; display: flex; flex-direction: column; gap: 0.25rem; }
+.card-role { font-size: 0.92rem; }
+.card-meta { color: var(--muted); font-size: 0.8rem; }
+.card-notes { font-size: 0.85rem; margin: 0.25rem 0; color: #374151; }
+.card-actions { display: flex; gap: 0.35rem; align-items: center; margin-top: 0.35rem; flex-wrap: wrap; }
+.card-actions select { padding: 0.3rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.82rem; }
+
+.app-form, .auth-card {
+  background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem;
+}
+.app-form { margin: 1rem 0; }
+.app-form h3 { margin-top: 0; }
+.app-form label, .auth-card label { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.88rem; margin-bottom: 0.8rem; flex: 1; }
+.app-form input, .app-form select, .app-form textarea,
+.auth-card input {
+  padding: 0.55rem 0.7rem; border: 1px solid var(--border); border-radius: 8px; font-size: 0.95rem; font-family: inherit;
+}
+.form-row { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.form-actions { display: flex; gap: 0.6rem; }
+
+.auth-page { display: flex; justify-content: center; padding: 3rem 1rem; }
+.auth-card { width: 100%; max-width: 400px; }
+.auth-card h2 { margin-top: 0; }
